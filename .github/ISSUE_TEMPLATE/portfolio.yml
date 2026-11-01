@@ -1,0 +1,41 @@
+name: Portfolio request
+description: Report a bug or propose an improvement for the portfolio.
+title: "[Portfolio] "
+body:
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      description: Choose the kind of portfolio work this issue tracks.
+      options:
+        - Feature request
+        - Bug report
+        - Content update
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: State the requested change or problem in one sentence.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Describe the context and the desired outcome.
+      placeholder: Include relevant examples or affected pages.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: List the observable conditions that will make this work complete.
+      placeholder: |-
+        - [ ] First expected outcome
+        - [ ] Second expected outcome
+    validations:
+      required: true

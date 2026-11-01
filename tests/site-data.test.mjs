@@ -45,6 +45,20 @@ test('Docker deployment builds the site and serves its static output', () => {
   assert.match(ignore, /dist/);
 });
 
+test('the portfolio issue form defines required request details and acceptance criteria', () => {
+  const form = readFileSync(new URL('../.github/ISSUE_TEMPLATE/portfolio.yml', import.meta.url), 'utf8');
+  assert.match(form, /^name: Portfolio request$/m);
+  assert.match(form, /^description: Report a bug or propose an improvement for the portfolio\.$/m);
+  assert.match(form, /^title: "\[Portfolio\] "$/m);
+  assert.match(form, /^      label: Request type$/m);
+  assert.match(form, /^        - Feature request$/m);
+  assert.match(form, /^        - Bug report$/m);
+  assert.match(form, /^        - Content update$/m);
+  assert.equal((form.match(/^  - type: (?:dropdown|input|textarea)$/gm) ?? []).length, 4);
+  assert.equal((form.match(/^      required: true$/gm) ?? []).length, 4);
+  assert.match(form, /^      label: Acceptance criteria$/m);
+});
+
 test('the homepage distinguishes native Android work from Java SE and Java EE', () => {
   assert.match(siteCopy.en.aboutStack, /Java SE.*Java EE.*Android/);
   assert.match(siteCopy.es.aboutStack, /Java SE.*Java EE.*Android nativo/);
