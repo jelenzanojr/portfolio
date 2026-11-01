@@ -1,0 +1,13 @@
+.git
+.codegraph
+.atl
+.vscode
+.env
+.env.*
+!.env.example
+node_modules
+dist
+docs
+tests
+tools
+npm-debug.log*

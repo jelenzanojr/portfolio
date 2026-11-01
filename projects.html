@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101411" />
+    <meta name="description" content="Selección de proyectos mobile, Java, full-stack, Odoo y DevOps." />
+    <title>Proyectos | José</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script type="module" src="./src/projects.ts"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="José — portfolio">
+        <span class="brand-mark" aria-hidden="true">J</span>
+        <span>josé<span class="brand-dot">.</span>dev</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="./index.html#about" data-i18n="navAbout">Quién soy</a>
+        <a href="./index.html#work" data-i18n="navWork">Proyectos</a>
+        <a href="#projects" aria-current="page" data-i18n="navArchive">Todos</a>
+        <a href="./index.html#experience" data-i18n="navJourney">Trayectoria</a>
+        <a href="./index.html#contact" data-i18n="navContact">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="Idioma">
+          <button type="button" data-locale="es" aria-pressed="true">ES</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-locale="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Activar tema claro" title="Activar tema claro">
+          <span class="theme-icon" aria-hidden="true">☼</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="archive-main section-shell">
+      <section class="archive-hero" aria-labelledby="archive-title">
+        <p class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">Proyectos y experiencia seleccionados</span></p>
+        <h1 id="archive-title" data-i18n="title">Una mirada más amplia<br /><em>a lo que construyo.</em></h1>
+        <p class="archive-intro" data-i18n="introduction">Una selección de productos mobile, Java, plataformas full-stack, Odoo y DevOps.</p>
+      </section>
+
+      <section class="archive-section" id="projects" aria-labelledby="archive-list-title">
+        <h2 class="visually-hidden" id="archive-list-title" data-i18n="navProjects">Proyectos</h2>
+        <div class="archive-filters" role="group" aria-label="Filtrar proyectos" data-i18n-aria="filterLabel">
+          <button type="button" data-filter="all" aria-pressed="true" data-i18n="filterAll">Todo</button>
+          <button type="button" data-filter="mobile" aria-pressed="false" data-i18n="filterMobile">Flutter y mobile</button>
+          <button type="button" data-filter="fullstack" aria-pressed="false" data-i18n="filterFullstack">Full-stack</button>
+          <button type="button" data-filter="android" aria-pressed="false" data-i18n="filterAndroid">Android nativo</button>
+          <button type="button" data-filter="java" aria-pressed="false" data-i18n="filterJava">Java</button>
+          <button type="button" data-filter="erp" aria-pressed="false" data-i18n="filterErp">Odoo / ERP</button>
+          <button type="button" data-filter="devops" aria-pressed="false" data-i18n="filterDevops">DevOps / CI/CD</button>
+        </div>
+        <div class="archive-project-grid" id="archive-projects" aria-live="polite"></div>
+        <p class="archive-empty" id="archive-empty" hidden data-i18n="empty">Todavía no hay proyectos en esta categoría.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell" id="site-footer"></footer>
+  </body>
+</html>
